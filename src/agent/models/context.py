@@ -7,4 +7,5 @@ class ContextData:
     filename: str
     dirname: str
     content: str
+    hash: str
     tags: list[str]

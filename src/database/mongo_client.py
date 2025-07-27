@@ -10,7 +10,7 @@ db = client[config.MONGO_DATABASE]
 contexts = db.contexts
 
 
-async def find_context(name: str):
+async def find_context(name: str) -> dict | None:
     logger.mongo_operation("Context", "FindOne", name)
 
     return await contexts.find_one({"name": name})

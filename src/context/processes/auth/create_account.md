@@ -15,4 +15,6 @@
    - Que ambas contraseñas coincidan.
 5. Después de completar el formulario, el usuario debe hacer clic en el botón **"Crear cuenta"**.
 6. Si el registro es exitoso, se mostrará un mensaje de confirmación, y posiblemente se le pida verificar su correo electrónico.
-7. En caso
+7. En caso de problemas durante el registro (por ejemplo, un correo ya registrado o un error en el formulario):
+   - Aconséjale revisar los mensajes de error en pantalla.
+   - Si el problema persiste, recomiéndale contactar al soporte técnico de {{product_name}} a través del formulario de contacto en el sitio web o por correo a soporte@{{product_name}}.com
