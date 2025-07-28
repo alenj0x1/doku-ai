@@ -1,19 +1,24 @@
-import asyncio
-import sys
-from agent.doku import Doku
+from core.kyra import Kyra
+from pathlib import Path
+from core.chroma_manager import ChromaManager
+
+kyra = Kyra()
+chroma_manager = ChromaManager("chroma_db")
+
+current_dir = Path.cwd()
 
 
-async def main():
-    doku = Doku()
-    await doku.load_context()
-    await doku.start_monitor()
-
+def main():
     while True:
-        question = input("Prompt: ")
-        await doku.chat(content=question)
+        question = input("question: ")
+
+        response = kyra.chat_retrieval(
+            question, retriever=chroma_manager.retriever("taka")
+        )
+
+        print(response["source_documents"])
+        print("-----------------------------------------")
+        print(response["result"])
 
 
-if __name__ == "__main__":
-    if sys.platform == "win32":
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-    asyncio.run(main())
+main()
