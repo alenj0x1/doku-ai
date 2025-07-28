@@ -1,8 +1,8 @@
-from core.kyra import Kyra
+from core.doku import Doku
 from pathlib import Path
 from core.chroma_manager import ChromaManager
 
-kyra = Kyra()
+doku = Doku()
 chroma_manager = ChromaManager("chroma_db")
 
 current_dir = Path.cwd()
@@ -12,7 +12,7 @@ def main():
     while True:
         question = input("question: ")
 
-        response = kyra.chat_retrieval(
+        response = doku.chat_retrieval(
             question, retriever=chroma_manager.retriever("taka")
         )
 

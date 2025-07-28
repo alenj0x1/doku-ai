@@ -7,7 +7,7 @@ from langchain_core.vectorstores import VectorStoreRetriever
 from langchain.chains import RetrievalQA
 
 
-class Kyra:
+class Doku:
     model: OllamaLLM
     text_splitter = RecursiveCharacterTextSplitter
 
